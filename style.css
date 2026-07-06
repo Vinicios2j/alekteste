@@ -1,0 +1,225 @@
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0c1b; /* Fundo escuro profundo para destacar o neon e o rosa */
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+/* --- Esferas de Fundo para Efeito de Vidro --- */
+.background-circles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    filter: blur(80px);
+    opacity: 0.4;
+}
+
+.c1 { width: 400px; height: 400px; top: -10%; left: -10%; }
+.c2 { width: 500px; height: 500px; bottom: -10%; right: -10%; background: linear-gradient(135deg, #ec008c, #fc6767); }
+
+/* --- Containers Premium (Glassmorphism) --- */
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 40px 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+.container-resultado {
+    display: none;
+    max-width: 550px;
+    width: 90%;
+    padding: 50px 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    animation: scaleUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- Tipografia --- */
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 65px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: 35px;
+    letter-spacing: 0.5px;
+}
+
+.texto {
+    font-size: 18px;
+    color: #e0e0e0;
+    font-weight: 300;
+}
+
+/* --- Galeria Avançada --- */
+.galeria {
+    margin: 40px 0;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.foto-wrapper {
+    background: white;
+    padding: 12px 12px 35px 12px;
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.foto-wrapper:nth-child(odd) { transform: rotate(-3deg); }
+.foto-wrapper:nth-child(even) { transform: rotate(3deg); }
+
+.galeria img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.foto-wrapper:hover {
+    transform: scale(1.1) rotate(0deg) translateY(-10px);
+    z-index: 10;
+}
+
+/* --- Botões Customizados --- */
+.botoes {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 65, 108, 0.2);
+}
+
+.btn-acao {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+}
+
+.btn-acao:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(255, 65, 108, 0.4);
+}
+
+.card-glass {
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 360px;
+    text-align: left;
+}
+
+.card-glass p {
+    font-size: 17px;
+    margin: 12px 0;
+    color: #f0f0f0;
+}
+
+.btn-mapa {
+    background: white;
+    color: #ff416c;
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn-mapa:hover {
+    background: #fff0f5;
+    transform: translateY(-2px);
+}
+
+#contador {
+    margin: 25px 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ff7eb3;
+    text-shadow: 0 0 10px rgba(255, 126, 179, 0.3);
+}
+
+/* --- Animação de Corações Flutuantes --- */
+.heart {
+    position: fixed;
+    bottom: -50px;
+    pointer-events: none;
+    z-index: 100;
+    animation: voar linear infinite;
+}
+
+@keyframes voar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% {
+        transform: translateY(-105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* --- Keyframes de Transição --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}

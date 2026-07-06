@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um Convite Especial ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="background-circles">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+</div>
+
+<main class="container" id="tela-convite">
+    <h1>Tenho um convite para você...</h1>
+    <p class="texto">Desde que pensei nisso, só consigo imaginar seu sorriso. ❤️</p>
+
+    <section class="galeria">
+        <div class="foto-wrapper">
+            <img src="fotoTeste.jpg" alt="Momento especial 1">
+        </div>
+        <div class="foto-wrapper">
+            <img src="fotoTeste.jpg" alt="Momento especial 2">
+        </div>
+        <div class="foto-wrapper">
+            <img src="fotoTeste.jpg" alt="Momento especial 3">
+        </div>
+    </section>
+
+    <h2>Você aceita sair comigo?</h2>
+
+    <div class="botoes">
+        <button id="sim" class="btn-acao">❤️ Sim</button>
+        <button id="claro" class="btn-acao">✨ Claro!</button>
+    </div>
+</main>
+
+<section id="resultado" class="container-resultado">
+    <h1>🎉 Perfeito!</h1>
+    <h2>Nosso encontro está marcado ❤️</h2>
+
+    <div class="card-glass">
+        <p>📅 <strong>Data:</strong> 18 de Julho de 2026</p>
+        <p>🕒 <strong>Horário:</strong> 19:30</p>
+        <p>📍 <strong>Local:</strong> Outback Shopping</p>
+    </div>
+
+    <div id="contador">⏳ Calculando tempo...</div>
+
+    <button class="btn-mapa" onclick="window.open('https://maps.google.com','_blank')">
+        📍 Ver no Mapa
+    </button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
